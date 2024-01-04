@@ -1,0 +1,211 @@
+<section class="form-create-noticia-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-noticia">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="titulo_noticia">Título da Notícia</label>
+        <input type="text" placeholder="Digite o título da notícia" autocomplete="off" id="input-titulo-noticia" />
+      </div>
+      <div class="input-block">
+        <label for="descricao_noticia">Descrição da Notícia</label>
+        <textarea name="descricao_noticia" id="descricao-noticia" cols="30" rows="7"
+          placeholder="Adicione uma descrição para essa matéria"></textarea>
+      </div>
+
+      <div class="input-block">
+        <label for="input-data-criacao">Data de Criação</label>
+        <input type="datetime-local" autocomplete="off" id="input-data-criacao" />
+      </div>
+    </div>
+
+    <div class="galeria-wrapper">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button type="reset" class="button-cancelar">Cancelar</button>
+    <button type="submit" class="button-salvar">Salvar</button>
+  </div>
+</section>
+
+<section class="list-noticias-container">
+  <div class="header-list">
+    <h2 class="title">Lista de notícias</h2>
+    <div class="assets-list">
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque por título de notícias" autocomplete="off" id="input-search-noticias" />
+        <button id="button-submit-search-noticia">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-noticia" title="Adicionar nova notícia">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-noticias" cellspacing="0">
+    <thead class="table-header-list-noticias">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th class="flex-th">Data</th>
+    </thead>
+    <tbody class="table-body-list-noticias" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-noticia">
+    <div class="container-view-noticia-details">
+      <div class="details">
+        <h1 class="title">Detalhes da Notícia</h1>
+        <div class="titulo-noticia-container">
+          <h3>Título da Notícia</h3>
+          <p id="title-noticia">Nome da imagem aqui</p>
+        </div>
+        <div class="id-noticia-container">
+          <h3>ID</h3>
+          <span id="id-noticia">00001</span>
+        </div>
+        <div class="noticia-description-container">
+          <h3>Descrição da Notícia</h3>
+          <div id="noticia-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
+            esse libero aperiam laborum dolore at exercitationem eveniet earum
+            quis aspernatur qui, dignissimos excepturi blanditiis. Corrupti
+            tempore ad odio hic obcaecati.
+          </div>
+        </div>
+        <div class="date-criation-noticia-container">
+          <h3>Data de criação</h3>
+          <p id="noticia-data">12/10/2023 16:43:54</p>
+        </div>
+      </div>
+
+      <div class="noticia-view">
+        <img src="http://localhost/WEBSITELINENSE/assets/images/image-default.jpg" id="noticia-view-img" />
+        <div class="id-image-container">
+          <p id="id-imagem-noticia">0000</p>
+        </div>
+      </div>
+
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+      </button>
+
+      <!-- more-about-noticie -->
+      <dialog class="mais-sobre-noticia">
+        <div class="mais-sobre-noticia-container">
+          <div class="header-noticia">
+            <h3>Descrição da notícia</h3>
+            <button class="button-close-mais-sobre-noticia">Fechar</button>
+          </div>
+          <p class="title-header-noticia"></p>
+          <p id="text-description">
+            <!-- AQUI SERÁ EXIBIDO O TEXTO -->
+          </p>
+        </div>
+      </dialog>
+    </div>
+  </dialog>
+</section>
+
+<section class="form-edit-noticia-container">
+  <button class="button-voltar-icon" id="button-voltar-icon-edit-noticia">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-noticia">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="input-nome-jogador">Título da Notícia</label>
+        <input type="text" placeholder="Digite o título da notícia" autocomplete="off" id="input-titulo-noticia" />
+      </div>
+
+      <div class="input-block">
+        <label for="descricao-noticia">Descrição da Notícia</label>
+        <textarea name="descricao_noticia" id="descricao-noticia"
+          placeholder="Adicione uma descrição para essa matéria"></textarea>
+      </div>
+
+      <div class="input-block">
+        <label for="input-data-criacao">Data de Criação</label>
+        <input type="datetime-local" autocomplete="off" id="input-data-criacao" />
+      </div>
+    </div>
+
+    <div class="galeria-wrapper-edit">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content-edit">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="reset" class="button-cancelar" id="button-cancel-upload-noticia">
+        Cancelar
+      </button>
+      <button type="submit" class="button-salvar" id="button-upload-noticia">
+        Salvar
+      </button>
+    </div>
+  </section>
+</section>
+
+<script src="assets/cms/controller/noticias.js"></script>

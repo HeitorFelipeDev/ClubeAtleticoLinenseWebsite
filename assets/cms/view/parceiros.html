@@ -1,0 +1,178 @@
+<section class="form-create-parceiro-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-parceiro">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="nome-parceiro">Nome do Parceiro</label>
+        <input type="text" placeholder="Digite o nome da empresa" autocomplete="off" name="nome-parceiro"
+          id="input-nome-parceiro" />
+      </div>
+      <div class="input-block">
+        <label for="link-parceiro">Link do Parceiro</label>
+        <input type="text" placeholder="Informe o link para website" autocomplete="off" name="link-parceiro"
+          id="input-link-parceiro">
+      </div>
+    </div>
+
+    <div class="galeria-wrapper">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button type="reset" class="button-cancelar">Cancelar</button>
+    <button type="submit" class="button-salvar">Salvar</button>
+  </div>
+</section>
+
+<section class="list-parceiros-container">
+  <div class="header-list">
+    <h2 class="title">Lista de parceiros</h2>
+    <div class="assets-list">
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque por nome de parceiros" autocomplete="off" id="input-search-parceiros" />
+        <button id="button-submit-search-parceiros">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-parceiro" title="Adicionar novo parceiro">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-parceiros" cellspacing="0">
+    <thead class="table-header-list-parceiros">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Nome</th>
+      <th class="flex-th">Link</th>
+    </thead>
+    <tbody class="table-body-list-parceiros" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-parceiro">
+    <div class="container-view-parceiro-details">
+      <div class="details">
+        <h1 class="title">Detalhes do Parceiro</h1>
+        <div class="nome-parceiro-container">
+          <h3>Nome do Parceiro</h3>
+          <p id="nome-parceiro">Nome parceiro aqui</p>
+        </div>
+        <div class="id-parceiro-container">
+          <h3>ID</h3>
+          <span id="id-parceiro">00001</span>
+        </div>
+        <div class="link-parceiro-container">
+          <h3>Link do Parceiro</h3>
+          <p id="link-parceiro">Link parceiro aqui</p>
+        </div>
+      </div>
+
+      <div class="parceiro-view">
+        <img src="http://localhost/WEBSITELINENSE/assets/images/image-default.jpg" id="parceiro-view-img" />
+        <div class="id-image-container">
+          <p id="id-imagem-parceiro">0000</p>
+        </div>
+      </div>
+
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</section>
+
+<section class="form-edit-parceiro-container">
+  <button class="button-voltar-icon" id="button-voltar-icon-edit-parceiro">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-parceiro">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="nome-parceiro">Nome do Parceiro</label>
+        <input type="text" placeholder="Digite o nome da empresa" autocomplete="off" name="nome-patrocinador"
+          id="input-nome-parceiro" />
+      </div>
+      <div class="input-block">
+        <label for="link-parceiro">Link do Parceiro</label>
+        <input type="text" placeholder="Informe o link para website" autocomplete="off" name="link-parceiro"
+          id="input-link-parceiro">
+      </div>
+    </div>
+
+    <div class="galeria-wrapper-edit">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content-edit">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="reset" class="button-cancelar" id="button-cancel-upload-parceiro">
+        Cancelar
+      </button>
+      <button type="submit" class="button-salvar" id="button-upload-parceiro">
+        Salvar
+      </button>
+    </div>
+  </section>
+</section>
+
+<script src="assets/cms/controller/parceiros.js"></script>

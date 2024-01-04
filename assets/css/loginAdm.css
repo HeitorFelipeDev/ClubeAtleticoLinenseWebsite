@@ -1,0 +1,216 @@
+@import url('../css/global.css');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+}
+
+.login-container {
+    width: 900px;
+    height: 500px;
+    border: 1px solid var(--border-light);
+    border-radius: .3rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.dark-mode {
+    background: #0d0d0d;
+}
+
+.dark-mode .login-container {
+    background: #1E1E1E;
+    border: none;
+}
+
+.login-container .left-side-container {
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+
+.dark-mode .left-side-container {
+    background: #000;
+}
+
+.login-container .left-side-container > div {
+    text-align: center;
+}
+
+.login-container .left-side-container .logo-login {
+    height: 15rem;
+}
+
+.login-container .left-side-container .title {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: var(--f-s-2);
+    margin-top: 1rem;
+}
+
+#login-administrador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-administrador .title-login {
+    font-size: var(--f-s-3);
+    color: #a7a7a7;
+}
+
+#login-administrador p {
+    font-size: var(--f-s-1);
+    color: var(--color-dark);
+}
+
+.dark-mode #login-administrador p {
+    color: #8b8b8b;
+}
+
+#login-administrador .input-group {
+    margin-top: 2rem;
+}
+
+#login-administrador .input-block {
+    margin-top: 1.5rem;
+}
+
+#login-administrador .input-block label {
+    font-weight: var(--f-500);
+    color: var(--color-dark);
+}
+
+.dark-mode #login-administrador .input-block label {
+    color: #747474;
+}
+
+#login-administrador .input-block .input-container {
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin-top: .2rem;
+    border-radius: .1rem;
+}
+
+.dark-mode .input-container {
+    background: #0d0d0d;
+}
+
+#login-administrador .input-container .icon {
+    padding: 0 .5rem;
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+}
+
+#login-administrador svg {
+    color: #a7a7a7;
+    height: 1.4rem;
+}
+
+
+#login-administrador #button-ver-senha {
+    margin-right: 1rem;
+    cursor: pointer;
+    color: #a7a7a7;
+}
+
+#login-administrador .input-container input {
+    padding: 0 1rem;
+    flex: 1;
+    font-size: var(--f-s-1);
+    background: none;
+    color: var(--color-dark);
+}
+
+#login-administrador #button-esqueceu-senha {
+    font-size: .8rem;
+    margin-top: .5rem;
+    color: #797979;
+    float: right;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+#login-administrador #button-esqueceu-senha:hover {
+    transition: .3s ease-in;
+    color: #494949;
+    text-decoration: underline;
+}
+
+#login-administrador #button-submit-login {
+    width: 100%;
+    padding: .7rem 1rem;
+    border-radius: .3rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    margin-top: 2rem;
+    transition: .4s ease-in;
+    font-weight: var(--f-600);
+}
+
+#login-administrador #button-submit-login:hover {
+    transition: .3s ease-out;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.button-dark-mode {
+    height: 3rem;
+    width: 3rem;
+    border-radius: var(--border-r-50);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a7a7a7;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.button-dark-mode:hover {
+    border-color: #707070;
+    color: #707070;
+}
+
+@media screen and (max-width: 990px) {
+    body {
+        display: block;
+        padding-top: 5rem;
+    }
+
+    .login-container {
+        width: max-content;
+        display: block;
+        padding: 3rem;
+        background: none !important;
+        border: 0;
+    }
+
+    .login-container .left-side-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .login-container {
+        width: 98vw;
+    }
+}

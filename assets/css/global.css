@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    border: 0;
+    outline: 0;
+    font-size: var(--f-s-1);
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+}
+
+:root {
+    --color-primary: #EC1B23;
+    --color-secondary: #3A0000;
+    --color-dark: #0D0D0D;
+    --color-white: #FFFFFF;
+    --color-white-light: #F0F0F0;
+
+    --f-s-1: 1rem;
+    --f-s-2: 1.5rem;
+    --f-s-3: 2rem;
+    --f-s-4: 2.5rem;
+    --f-s-5: 3rem;
+
+    --border-r-50: 50%;
+    --border-dark: #2b2b2b;
+    --border-light: #d8d8d8;
+
+    --f-500: 500;
+    --f-600: 600;
+    --f-700: 700;
+    --f-800: 800;
+    --f-bold: bolder;
+}
+
+body {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    --color-dark: #ffff;
+    --color-white: #1A1A1A;
+
+    --color-white-light: #000000;
+    --border-light: var(--border-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar_button{
+    position: static;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.navbar_button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+@media screen and (max-width: 990px) {
+
+    .navbar_button{
+        display: flex;
+        z-index: 99;
+    }
+
+    #top, #bottom{
+        transform-origin: left;
+    }
+
+    .navbar_button.active .bar {
+        background: var(--color-dark);
+    }
+    
+    .navbar_button.active #top{
+        transform: rotate(38deg);
+        transition: 0.6s;
+    }
+    
+    .navbar_button.active #center{
+        opacity: 0;
+        transition: 0.6s;
+    }
+    
+    .navbar_button.active #bottom{
+        transform: rotate(-38deg);
+        transition: 0.6s;
+    }
+}
+
+/* SweetAlert */
+.meu-sweet-alert-confirm-button {
+    background: var(--color-primary) !important;
+}
+
+.meu-sweet-alert-confirm-button-green {
+    background: #91DE91 !important;
+}
+

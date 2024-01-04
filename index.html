@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clube Atlético Linense</title>
+
+  <!-- link-css -->
+  <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <!-- script-js -->
+  <script src="./assets/js/index.js" defer></script>
+  <script src="./assets/js/darkModeSettings.js" defer></script>
+  <script src="./assets/js/carrossel.js" defer></script>
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="assets/images/CAL_logo_p.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <section class="message-bottom show">
+    <h3>#avantelinense</h3>
+    <p>Seja um <span>sócio torcedor</span> do Elefante</p>
+    <button>Clique aqui</button>
+  </section>
+
+  <section class="cookies" id="cookieBanner">
+    <p>
+      Nós utilizamos cookies para melhorar a navegação do site e personalizar
+      o conteúdo disponibilizado. Poderá aceitar ou rejeitar todos os cookies
+      que não sejam estritamente necessários, através dos botões, ou gerir
+      estes ficheiros clicando em “Definições de Cookies” ou no link
+      disponível no rodapé da página. Para mais informação visite a nossa
+      <a href="#">Politica de cookies</a>
+    </p>
+    <aside>
+      <a href="#">Definições de cookies</a>
+      <button class="button-cookies accept-cookies">Aceitar cookies</button>
+      <button class="button-cookies">Rejeitar cookies</button>
+    </aside>
+  </section>
+
+  <section class="banner-anuncio">
+    <div class="anuncio-container">
+      <button id="button-close-anuncio">
+        <i class="fa fa-x"></i>
+      </button>
+      <img src="assets/images/anuncio.jpg" alt="Anúncio" />
+    </div>
+  </section>
+
+  <header class="header">
+    <div class="container">
+      <img src="assets/images/CAL_logo_p.png" alt="Logo do Cluble Atlético Linense" class="header-image-center" />
+      <div class="assets">
+        <div class="header-message">
+          <h3>Nova terceira Camisa do Elefante!</h3>
+          <h4><a href="#">Adquira aqui</a></h4>
+        </div>
+        <div class="social-media">
+          <div class="text">Siga o elefante nas redes sociais</div>
+          <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flinenseoficial" target="_blank"
+            title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/calinense.oficial" target="_blank" title="Facebook"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@linensetv1783" target="_blank" title="Youtube"><i
+              class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/calinenseoficial/" target="_blank" title="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/clube-atletico-linense/" target="_blank" title="LinkedIn"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button id="button-login">
+          login
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </button>
+        <button id="button-ingressos">
+          ingressos
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-ticket">
+            <path
+              d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+            <path d="M13 5v2" />
+            <path d="M13 17v2" />
+            <path d="M13 11v2" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link nav-link-active">Home</a>
+        </li>
+        <li class="nav-item nav-item-submenu">
+          <a class="nav-link">
+            Clube <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <div class="submenu">
+            <a href="#" class="nav-link">História</a>
+            <a href="#" class="nav-link">Hino</a>
+            <a href="#" class="nav-link">Títulos</a>
+            <a href="#" class="nav-link">Staff</a>
+            <a href="#" class="nav-link">Transparência</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Notícias</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Futebol</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Jogos</a>
+        </li>
+        <li class="nav-item nav-item-submenu">
+          <a class="nav-link">
+            Estrutura <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <div class="submenu">
+            <a href="#" class="nav-link">Central de Treinamento</a>
+            <a href="#" class="nav-link">O Gilbertão</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="carrossel">
+      <div class="owl-carousel">
+        <div class="slide">
+          <img src="assets/images/slideImg1.jpg" alt="" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/slideImg2.jpg" alt="" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/slideImg3.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION-PROXIMA-PARTIDA-START -->
+    <section class="proxima-partida">
+      <div class="proxima-partida-container">
+        <div class="message-partida">
+          <h2 class="subtitle subtitle-dark">Proxíma partida</h2>
+          <img src="assets/images/CAL_logo_p.png" alt="" />
+          <h3>Nenhuma partida foi agendada</h3>
+          <p>Aguarde pela agenda do campeonato</p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION-PROXIMA-PARTIDA-END -->
+
+    <!-- SECTION-NOTICIAS-START -->
+    <section class="noticias main-section" id="noticias">
+      <h2 class="subtitle">Últimas <span>notícias</span></h2>
+      <div class="noticias-container"></div>
+
+      <button class="button-ver-mais-info button-ver-mais-noticias">
+        <a href="#noticias">Ver mais <i class="fa fa-plus"></i></a>
+      </button>
+      <button class="button-ver-mais-info button-ver-todas-noticias" style="display: none">
+        <a href="./assets/index/view/noticias.html">Ver todas <i class="fa fa-plus"></i></a>
+      </button>
+    </section>
+    <!-- SECTION-NOTICIAS-END -->
+
+    <!-- SECTION-JOGOS-START -->
+    <section class="jogos main-section">
+      <div class="partidas-anteriores">
+        <h2 class="subtitle subtitle-dark">Últimos <span>jogos</span></h2>
+        <div class="partida-anterior-container"></div>
+      </div>
+
+      <div class="jogos-container" id="jogos-container">
+        <div class="tabela-container">
+          <h2 class="subtitle">
+            Classificação <span>Paulista Série A2</span>
+          </h2>
+          <table id="tabela-classificacao">
+            <thead class="tabela-classificacao-head">
+              <th class="th-full">Clube</th>
+              <th>Pts</th>
+              <th>PJ</th>
+              <th>V</th>
+              <th>E</th>
+              <th>D</th>
+              <th>GM</th>
+              <th>GS</th>
+              <th>DG</th>
+              <th class="th-ultimos-jogos">Últimos 5</th>
+            </thead>
+            <tbody class="tabela-classificacao-body">
+              <!-- DADOS SERÃO EXIBIDOS DINAMICAMENTE -->
+            </tbody>
+          </table>
+          <button class="button-ver-mais-info button-ver-tabela-completa">
+            Ver tabela completa <i class="fa fa-angle-double-down"></i>
+          </button>
+          <button class="button-ver-mais-info button-ver-tabela-minimizada" style="display: none">
+            <a href="#jogos-container">Minimizar tabela <i class="fa fa-angle-double-up"></i></a>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION-JOGOS-END -->
+
+    <!-- SECTION-ELENCO-START -->
+    <section class="elenco main-section">
+      <h2 class="subtitle">Elenco</h2>
+      <div class="jogadores"></div>
+      <button class="button-ver-mais">
+        <a href="./assets/index/view/elenco.html">Ver todos</a>
+      </button>
+    </section>
+    <!-- SECTION-ELENCO-END -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="patrocinadores">
+        <h2 class="subtitle">Patrocinadores</h2>
+        <div class="content">
+          <!-- AQUI SERÁ INSERIDO DINAMICAMENTE O CONTEÚDO -->
+        </div>
+        <button class="button-ver-mais">
+          <a href="#">Ver todos</a>
+        </button>
+      </div>
+
+      <div class="parceiros">
+        <h2 class="subtitle">Parceiros</h2>
+        <div class="content">
+          <!-- AQUI SERÁ INSERIDO DINAMICAMENTE O CONTEÚDO -->
+        </div>
+        <button class="button-ver-mais">
+          <a href="#">Ver todos</a>
+        </button>
+      </div>
+
+      <div class="social-media">
+        <h2 class="subtitle">
+          Siga o <span>Elefante</span> em todas as redes sociais
+        </h2>
+        <div class="content">
+          <a href="https://twitter.com/linenseoficial" target="_blank" title="Twitter" style="background: #000000">
+            <i class="fa-brands fa-x-twitter"></i>
+            <span>CAL Linense</span>
+            <h3>@calinense</h3>
+          </a>
+          <a href="https://www.facebook.com/calinense.oficial" target="_blank" title="Facebook"
+            style="background: #3b5998">
+            <i class="fa-brands fa-square-facebook"></i>
+            <span>CAL Linense</span>
+            <h3>@calinense</h3>
+          </a>
+          <a href="https://www.youtube.com/@linensetv1783" target="_blank" title="Youtube" style="background: #bb0000">
+            <i class="fa-brands fa-youtube"></i>
+            <span>CAL Linense</span>
+            <h3>@calinense</h3>
+          </a>
+          <a href="https://www.instagram.com/calinenseoficial/" target="_blank" title="Instagram" style="
+                background: radial-gradient(
+                    circle farthest-corner at 35% 90%,
+                    #fec564,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle farthest-corner at 0 140%,
+                    #fec564,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    ellipse farthest-corner at 0 -25%,
+                    #5258cf,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    ellipse farthest-corner at 20% -50%,
+                    #5258cf,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    ellipse farthest-corner at 100% 0,
+                    #893dc2,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    ellipse farthest-corner at 60% -20%,
+                    #893dc2,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    ellipse farthest-corner at 100% 100%,
+                    #d9317a,
+                    transparent
+                  ),
+                  linear-gradient(
+                    #6559ca,
+                    #bc318f 30%,
+                    #e33f5f 50%,
+                    #f77638 70%,
+                    #fec66d
+                  );
+              ">
+            <i class="fa-brands fa-instagram"></i>
+            <span>CAL Linense</span>
+            <h3>@calinense</h3>
+          </a>
+          <a href="https://www.linkedin.com/company/clube-atletico-linense/" target="_blank" title="LinkedIn"
+            style="background: #126bc4">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>CAL Linense</span>
+            <h3>@calinense</h3>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-navbar">
+        <div class="box">
+          <h3>Goleiros</h3>
+          <ul class="footer-menu list-goleiros"></ul>
+        </div>
+        <div class="box">
+          <h3>Zagueiros</h3>
+          <ul class="footer-menu list-zagueiros"></ul>
+        </div>
+        <div class="box">
+          <h3>Laterais</h3>
+          <ul class="footer-menu list-laterais"></ul>
+        </div>
+        <div class="box">
+          <h3>Meias</h3>
+          <ul class="footer-menu list-meias"></ul>
+        </div>
+        <div class="box">
+          <h3>Atacantes</h3>
+          <ul class="footer-menu list-atacantes"></ul>
+        </div>
+        <div class="box">
+          <h3>Linense</h3>
+          <ul class="footer-menu">
+            <li><a href="#">História</a></li>
+            <li><a href="#">Estádio</a></li>
+            <li><a href="#">Hino</a></li>
+            <li><a href="#">Títulos</a></li>
+            <li><a href="#">Campeonatos</a></li>
+            <li><a href="#">Central de Treinamento</a></li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Sócio Torcedor</h3>
+          <ul class="footer-menu">
+            <li><a href="#">Planos</a></li>
+            <li><a href="#">Informações</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Ingressos</h3>
+          <ul class="footer-menu">
+            <li><a href="#">Comprar ingressos</a></li>
+            <li><a href="#">Informações</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="logo-footer-aside">
+        <img src="assets/images/CAL_logo_p.png" alt="Logo Clube Atlético Linense" />
+        <h2>Clube Atlético Linense</h2>
+      </div>
+
+      <div class="aside">
+        <p>
+          Clube Atlético Linense 2023
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-copyright">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
+          </svg>
+          Todos os direitos reservados |
+          <a href="#">Termos, condições e políticas</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="button-dark-mode" title="Alterar modo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon"
+      viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+    </svg>
+  </div>
+  <button id="button-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+      });
+    });
+  </script>
+</body>
+
+</html>

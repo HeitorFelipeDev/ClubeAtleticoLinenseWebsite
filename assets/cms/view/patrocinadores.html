@@ -1,0 +1,179 @@
+<section class="form-create-patrocinador-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-patrocinador">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="nome-patrocinador">Nome do Patrocinador</label>
+        <input type="text" placeholder="Digite o nome da empresa" autocomplete="off" name="nome-patrocinador"
+          id="input-nome-patrocinador" />
+      </div>
+      <div class="input-block">
+        <label for="link-patrocinador">Link do Patrocinador</label>
+        <input type="text" placeholder="Informe o link para website" autocomplete="off" name="link-patrocinador"
+          id="input-link-patrocinador">
+      </div>
+    </div>
+
+    <div class="galeria-wrapper">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button type="reset" class="button-cancelar">Cancelar</button>
+    <button type="submit" class="button-salvar">Salvar</button>
+  </div>
+</section>
+
+<section class="list-patrocinadores-container">
+  <div class="header-list">
+    <h2 class="title">Lista de patrocinadores</h2>
+    <div class="assets-list">
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque por nome de patrocinadores" autocomplete="off"
+          id="input-search-patrocinadores" />
+        <button id="button-submit-search-patrocinadores">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-patrocinador" title="Adicionar novo patrocinador">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-patrocinadores" cellspacing="0">
+    <thead class="table-header-list-patrocinadores">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Nome</th>
+      <th class="flex-th">Link</th>
+    </thead>
+    <tbody class="table-body-list-patrocinadores" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-patrocinador">
+    <div class="container-view-patrocinador-details">
+      <div class="details">
+        <h1 class="title">Detalhes do Patrocinador</h1>
+        <div class="nome-patrocinador-container">
+          <h3>Nome do Patrocinador</h3>
+          <p id="nome-patrocinador">Nome patrocinador aqui</p>
+        </div>
+        <div class="id-patrocinador-container">
+          <h3>ID</h3>
+          <span id="id-patrocinador">00001</span>
+        </div>
+        <div class="link-patrocinador-container">
+          <h3>Link do Patrocinador</h3>
+          <p id="link-patrocinador">Link patrocinador aqui</p>
+        </div>
+      </div>
+
+      <div class="patrocinador-view">
+        <img src="http://localhost/WEBSITELINENSE/assets/images/image-default.jpg" id="patrocinador-view-img" />
+        <div class="id-image-container">
+          <p id="id-imagem-patrocinador">0000</p>
+        </div>
+      </div>
+
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</section>
+
+<section class="form-edit-patrocinador-container">
+  <button class="button-voltar-icon" id="button-voltar-icon-edit-patrocinador">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-patrocinador">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="nome-patrocinador">Nome do Patrocinador</label>
+        <input type="text" placeholder="Digite o nome da empresa" autocomplete="off" name="nome-patrocinador"
+          id="input-nome-patrocinador" />
+      </div>
+      <div class="input-block">
+        <label for="link-patrocinador">Link do Patrocinador</label>
+        <input type="text" placeholder="Informe o link para website" autocomplete="off" name="link-patrocinador"
+          id="input-link-patrocinador">
+      </div>
+    </div>
+
+    <div class="galeria-wrapper-edit">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content-edit">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="reset" class="button-cancelar" id="button-cancel-upload-patrocinador">
+        Cancelar
+      </button>
+      <button type="submit" class="button-salvar" id="button-upload-patrocinador">
+        Salvar
+      </button>
+    </div>
+  </section>
+</section>
+
+<script src="assets/cms/controller/patrocinadores.js"></script>

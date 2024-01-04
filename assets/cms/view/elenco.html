@@ -1,0 +1,303 @@
+<section class="form-create-elenco-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+
+  <section class="form-create-elenco">
+    <div class="input-group">
+      <div class="input-block input-col-2">
+        <label for="input-nome-jogador">Nome</label>
+        <input type="text" placeholder="Digite o nome do jogador" autocomplete="off" id="input-nome-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-numero-jogador">Número</label>
+        <input type="number" placeholder="Número do jogador" min="1" max="99" autocomplete="off"
+          id="input-numero-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="posicao">Selecione a Posição</label>
+        <select name="posicao" id="posicao-jogador">
+          <option disabled selected>Selecione</option>
+          <option value="Goleiro">Goleiro</option>
+          <option value="Zagueiro">Zagueiro</option>
+          <option value="Lateral">Lateral</option>
+          <option value="Meia">Meia</option>
+          <option value="Atacante">Atacante</option>
+        </select>
+      </div>
+
+      <div class="input-block">
+        <label for="input-data-jogador">Data de Nacimento</label>
+        <input type="date" placeholder="Digite a data de nascimento do jogador" autocomplete="off"
+          id="input-data-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-idade-jogador">Idade</label>
+        <input type="number" placeholder="Digite a idade do jogador" min="15" max="50" autocomplete="off"
+          id="input-idade-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-altura-jogador">Altura</label>
+        <input type="text" placeholder="Digite a altura do jogador" autocomplete="off" id="input-altura-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-nacionalidade-jogador">Nacionalidade</label>
+        <select name="input-nacionalidade-jogador" id="input-nacionalidade-jogador"></select>
+      </div>
+
+      <div class="input-block input-col-2">
+        <label for="descricao-jogador">Descrição</label>
+        <textarea name="descricao" id="descricao-jogador" placeholder="Descrição do jogador"></textarea>
+      </div>
+    </div>
+
+    <div class="galeria-wrapper">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button type="reset" class="button-cancelar">Cancelar</button>
+    <button type="submit" class="button-salvar">Salvar</button>
+  </div>
+</section>
+
+<section class="list-elenco-container">
+  <div class="header-list">
+    <h2 class="title">Lista de jogadores</h2>
+    <div class="assets-list">
+      <div class="posicao-container">
+        <select id="posicao">
+          <option value="">Todas</option>
+          <option value="Goleiro">Goleiros</option>
+          <option value="Zagueiro">Zagueiros</option>
+          <option value="Lateral">Laterais</option>
+          <option value="Meia">Meias</option>
+          <option value="Atacante">Atacantes</option>
+        </select>
+        <button id="filtrar">Filtrar</button>
+      </div>
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque pelo nome do jogador" autocomplete="off" id="input-search-elenco" />
+        <button id="button-submit-search-elenco">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-elenco" title="Adicionar novo jogador">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-elenco" cellspacing="0">
+    <thead class="table-header-list-elenco">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Nome</th>
+      <th>Número</th>
+      <th>Posição</th>
+      <th>Idade</th>
+      <th>Altura</th>
+      <th>Descrição</th>
+    </thead>
+    <tbody class="table-body-list-elenco" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-elenco">
+    <div class="container-view-elenco-details">
+      <div class="details">
+        <h1 class="title">Detalhes do Jogador</h1>
+
+        <div class="id-jogador-container">
+          <h3>ID</h3>
+          <span id="id-jogador">00001</span>
+        </div>
+
+        <div class="nome-jogador-container">
+          <h3>Nome do Jogador</h3>
+          <p id="nome-jogador">Nome do Jogador</p>
+        </div>
+
+        <div class="numero-jogador-container">
+          <h3>Número da Camisa</h3>
+          <p id="numero-camisa">80</p>
+        </div>
+
+        <div class="posicao-jogador-container">
+          <h3>Posição</h3>
+          <p id="position-jogador">Posição</p>
+        </div>
+
+        <div class="data-jogador-container">
+          <h3>Data de nacimento</h3>
+          <p id="date-jogador">12/10/2023</p>
+        </div>
+
+        <div class="idade-jogador-container">
+          <h3>Idade</h3>
+          <p id="idade-jogador">24</p>
+        </div>
+
+        <div class="altura-jogador-container">
+          <h3>Altura</h3>
+          <p id="altura-jogador">1.76</p>
+        </div>
+
+        <div class="nacionalidade-jogador-container">
+          <h3>Nacionalidade</h3>
+          <p id="nacionalidade">Brasileiro</p>
+        </div>
+
+        <div class="descricao-jogador-container">
+          <h3>Descrição do jogador</h3>
+          <p id="desc-jogador">Descrição do jogador</p>
+        </div>
+      </div>
+      <div class="elenco-view">
+        <img src="http://localhost/WEBSITELINENSE/assets/images/default-avatar.png" id="elenco-view-img" />
+        <div class="id-image-container">
+          <p id="id-imagem-jogador">0000</p>
+        </div>
+      </div>
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</section>
+
+<section class="form-edit-elenco-container">
+  <button class="button-voltar-icon" id="button-voltar-icon-edit-elenco">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-elenco">
+    <div class="input-group">
+      <div class="input-block input-col-2">
+        <label for="input-nome-jogador">Nome</label>
+        <input type="text" placeholder="Digite o nome do jogador" autocomplete="off" id="input-nome-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-numero-jogador">Número</label>
+        <input type="number" placeholder="Número do jogador" min="1" max="99" autocomplete="off"
+          id="input-numero-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="posicao">Selecione a Posição</label>
+        <select name="posicao" id="posicao-jogador">
+          <option disabled selected>Selecione</option>
+          <option value="Goleiro">Goleiro</option>
+          <option value="Zagueiro">Zagueiro</option>
+          <option value="Lateral">Lateral</option>
+          <option value="Meia">Meia</option>
+          <option value="Atacante">Atacante</option>
+        </select>
+      </div>
+
+      <div class="input-block">
+        <label for="input-data-jogador">Data de Nacimento</label>
+        <input type="date" placeholder="Digite a data de nascimento do jogador" autocomplete="off"
+          id="input-data-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-idade-jogador">Idade</label>
+        <input type="number" placeholder="Digite a idade do jogador" min="15" max="50" autocomplete="off"
+          id="input-idade-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-altura-jogador">Altura</label>
+        <input type="text" placeholder="Digite a altura do jogador" autocomplete="off" id="input-altura-jogador" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-nacionalidade-jogador">Nacionalidade</label>
+        <select name="input-nacionalidade-jogador" class="input-select-edit" id="input-nacionalidade-jogador"></select>
+      </div>
+
+      <div class="input-block input-col-2">
+        <label for="descricao-jogador">Descrição</label>
+        <textarea name="descricao" id="descricao-jogador" placeholder="Descrição do jogador"></textarea>
+      </div>
+    </div>
+
+    <div class="galeria-wrapper-edit">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content-edit">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="reset" class="button-cancelar" id="button-cancel-upload-elenco">
+        Cancelar
+      </button>
+      <button type="submit" class="button-salvar" id="button-upload-elenco">
+        Salvar
+      </button>
+    </div>
+  </section>
+</section>
+
+<script src="assets/cms/controller/elenco.js"></script>

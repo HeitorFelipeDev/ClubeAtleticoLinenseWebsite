@@ -1,0 +1,577 @@
+.form-create-elenco-container, .form-edit-elenco-container {
+  padding: 0 2rem;
+  position: relative;
+  display: none;
+}
+
+.form-create-elenco {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-create-elenco  .input-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-create-elenco .input-block {
+  margin: 0 1.5rem 0rem 1.5rem;
+}
+
+.form-create-elenco .input-block.input-col-2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.form-create-elenco .input-block.input-col-2 input,
+.form-create-elenco .input-block.input-col-2 textarea{
+  width: 33.8rem;
+  resize: none;
+}
+
+.form-create-elenco .input-block input,
+.form-create-elenco .input-block select,
+.form-create-elenco .input-block textarea {
+  border: 1px solid var(--border-light);
+  padding: 0.5rem 0.8rem;
+  width: 15rem;
+  background: var(--color-white);
+  color: var(--text-dark);
+  border-radius: 3px;
+}
+
+.input-block label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-block textarea[name="descricao_imagem"] {
+  resize: none;
+}
+
+.galeria-wrapper, .galeria-wrapper-edit {
+  width: 400px;
+  height: 400px;
+  border-radius: .3rem;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-wrapper .subtitle, .galeria-wrapper .subtitle > span {
+  text-align: center;
+  padding: .5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.galeria-wrapper-edit .subtitle, .galeria-wrapper-edit .subtitle > span {
+  text-align: center;
+  padding: .5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.galeria-wrapper .subtitle > span,  .galeria-wrapper-edit .subtitle > span{
+  color: #C11025;
+  padding: 0;
+}
+
+.galeria-content, .galeria-content-edit {
+  display: grid;
+  gap: .1rem;
+  grid-template-columns: repeat(3, 120px);
+  justify-content: center;
+  padding: .3rem;
+  height: max-content;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.galeria-content::-webkit-scrollbar, .galeria-content-edit::-webkit-scrollbar  {
+  width: 6px;
+  border: 1px solid var(--border-light);
+}
+
+.galeria-content::-webkit-scrollbar-thumb, .galeria-content-edit::-webkit-scrollbar-thumb  {
+  background: #C11025;
+  border-radius: 50px;
+}
+
+.galeria-content::-webkit-scrollbar-button, .galeria-content-edit::-webkit-scrollbar-button {
+  background: var(--border-light);
+  height: 10px;
+}
+
+.galeria-content .img, .galeria-content-edit .img {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-content .img > img, .galeria-content-edit .img > img  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s ease-in;
+  cursor: pointer;
+  position: relative;
+  border-radius: .3rem;
+}
+
+.galeria-content .img .info-img-create, .galeria-content-edit .img .info-img-edit {
+  position: absolute;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  transition: .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.info-img-create p, .info-img-edit p {
+  font-size: .7rem;
+  line-height: 13px;
+}
+
+.info-img-create p > span, .info-img-edit p > span {
+  font-size: inherit;
+  color: var(--color-primary);
+}
+
+.galeria-content .img:hover .info-img-create, .galeria-content-edit .img:hover .info-img-edit {
+  transition: .1s ease-in-out;
+  bottom: 0;
+}
+
+.galeria-content .img:hover > img, .galeria-content-edit .img:hover > img {
+  filter: brightness(.5) blur(1px) !important;
+  scale: 1.5;
+}
+
+.galeria-content .img > img:not(:hover), .galeria-content-edit .img > img:not(:hover) {
+  transition: .2s ease-out;
+  filter: none;
+}
+
+.galeria-content .img.selected > img, .galeria-content-edit .img.selected > img {
+  filter: brightness(.5) blur(1px) !important;
+  scale: 1.5;
+}
+
+.galeria-content .img.selected .info-img-create, .galeria-content-edit .img.selected .info-img-edit {
+  bottom: 0;
+}
+
+.galeria-content .img .info-img-create img, .galeria-content-edit .img .info-img-edit img {
+  height: 30px;
+}
+
+.form-create-elenco-container .buttons,
+.form-edit-elenco-container .buttons {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+  
+  display: flex;
+  justify-content: right;
+  gap: .5rem;
+
+  height: 40px;
+}
+
+.button-cancelar, .button-salvar {
+  padding: .7rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+.button-cancelar:hover, .button-salvar:hover {
+  opacity: .8;
+}
+
+.button-cancelar {
+  background-color: var(--color-white-light);
+  color: #969696;
+}
+
+.button-salvar {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-voltar-icon {
+  position: absolute;
+  right: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+
+/* ------------------------ */
+
+.list-elenco-container {
+  padding: 0 1.5rem;
+  position: relative;
+  height: 75vh;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border: 1px solid var(--border-light);
+  border-radius: .3rem;
+  align-items: center;
+}
+
+.assets-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.input-search-container {
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  width: 20rem;
+}
+
+#input-search-elenco {
+  flex: 1;
+  padding: .5rem 1rem;
+  background: none;
+  color: var(--text-dark);
+}
+
+#button-submit-search-elenco {
+  padding: .5rem 1rem;
+  background: none;
+  cursor: pointer;
+  background: none;
+}
+
+#button-create-new-elenco {
+  padding: .5rem .5rem;
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--border-light);
+}
+
+.table-list-elenco {
+  border: 1px solid var(--border-light);
+  padding: 0rem 2rem;
+  margin-top: .5rem;
+  width: 100%;
+}
+
+.table-header-list-elenco th {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.table-list-elenco td.td-min {
+  width: 10px;
+}
+
+.table-list-elenco td {
+  width: 20%;
+  text-align: center;
+  padding: .7rem 1rem;
+  font-size: .8rem;
+}
+
+.table-list-elenco td.td-descricao {
+  width: 400px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: right;
+  gap: .5rem;
+  padding: 1rem 0;
+  align-items: center;
+  position: absolute;
+  bottom: -10px;
+  right: 25px;
+}
+
+.pagination button {
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--border-light);
+  padding: .3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-body-list-elenco tr {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.table-body-list-elenco tr.visible {
+  opacity: 1;
+}
+
+.flex-th button {
+  display: flex;
+  gap: 5px;
+  font-weight: var(--f-bold);
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+.categoria-container {
+  padding: .5rem;
+  display: flex;
+}
+
+.categoria-container label {
+  display: flex;
+  align-items: center;
+}
+
+#posicao {
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  margin-left: 10px;
+  padding: .4rem 1rem;
+  background: var(--color-white);
+  width: 200px;
+}
+
+#filtrar {
+  background: none;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.td-acoes {
+  display: flex;
+  gap: 10px;
+  width: max-content !important;
+}
+
+.delete-icon, .edit-icon, .view-icon {
+  font-size: .8rem;
+  cursor: pointer;
+  opacity: .8;
+  font-weight: normal !important;
+}
+
+/* Adicione isso ao seu arquivo CSS */
+.sorting-animation {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* VIEW ELENCO */
+
+.container-view-elenco[open] {
+  animation: showModal .4s linear forwards;
+  width: 80vw;
+  margin: auto;
+  padding: 3rem;
+  overflow: hidden;
+  border-radius: .3rem;
+  
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.075);
+  background: url("../images/bg-cal-white.png");
+  background-position: center;
+  color: var(--text-dark);
+}
+
+.container-view-elenco[open]::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #ffffff, transparent);
+  z-index: 1;
+}
+
+.dark-mode .container-view-elenco[open]::before {
+  background-image: linear-gradient(to top, #000, transparent);
+}
+
+.dark-mode .container-view-elenco[open] {
+  background: url("../images/bg-cal-black.png");
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+.container-view-elenco::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.container-view-elenco .title {
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50px;
+  font-size: var(--f-s-2);
+}
+
+.container-view-elenco-details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem 0;
+  border-radius: .3rem;
+  gap: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.container-view-elenco-datails::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+
+.container-view-elenco .image-description {
+  padding: 1rem;
+  border-radius: .3rem;
+  margin: 1rem 0;
+}
+
+.container-view-elenco #button-back {
+  padding: .5rem;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  background: none;
+  top: -40px;
+  right: -20px;
+}
+
+.elenco-view {
+  background: #fff;
+  box-shadow: 18px 28px 12px -8px rgba(0, 0, 0, 0.151);
+  padding: 2rem;
+  padding-bottom: 1rem;
+  border-radius: .3rem;
+  border: 1px solid var(--border-light);
+}
+
+.dark-mode .elenco-view {
+  background: #070707;
+  border: none;
+}
+
+#elenco-view-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: .3rem;
+}
+
+.id-image-container {
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container-view-elenco #id-jogador,
+#date-jogador,
+#altura-jogador,
+#idade-jogador,
+#position-jogador,
+#numero-camisa,
+#nome-jogador,
+#nacionalidade,
+#desc-jogador {
+  background: #C11025;
+  padding: .4rem 1rem;
+  border-radius: .2rem;
+  color: #ffff;
+}
+
+.container-view-elenco .id-jogador-container,
+.nome-jogador-container,
+.idade-jogador-container,
+.altura-jogador-container,
+.posicao-jogador-container,
+.numero-jogador-container,
+.data-jogador-container,
+.nacionalidade-jogador-container {
+  display: flex;
+  gap: 1rem;
+  padding: .2rem;
+  align-items: center;
+}
+
+.descricao-jogador-container {
+  padding: .2rem;
+  margin-top: .3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+#id-imagem-jogador {
+  background: #C11025;
+  padding: .3rem 3rem;
+  color: #fff;
+  border-radius: .3rem;
+  font-weight: 600;
+}
+
+.message-not-exists-images {
+  text-align: center;
+  font-size: .8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+
+.message-not-exists-images img {
+  height: 50px;
+  width: 50px;
+  opacity: .3;
+}

@@ -1,0 +1,193 @@
+@import url('../css/global.css');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+}
+
+.cadastro-container {
+    border: 1px solid var(--border-light);
+    width: 900px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: .3rem;
+}
+
+.cadastro-container #cadastro-administrador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cadastro-administrador .title {
+    font-size: var(--f-s-2);
+    color: #a7a7a7;
+}
+
+#cadastro-administrador .subtitle {
+    color: var(--color-dark);
+}
+
+#cadastro-administrador .input-group {
+    margin-top: 2rem;
+}
+
+#cadastro-administrador .input-group .input-block {
+    margin-bottom: 1rem;
+}
+
+#cadastro-administrador .input-block .input-container {
+    display: flex;
+    padding: 1rem 0;
+    border: 1px solid var(--border-light);
+    border-radius: .1rem;
+    align-items: center;
+}
+
+#cadastro-administrador .input-container .icon {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--border-light);
+}
+
+#cadastro-administrador .input-container .icon > svg {
+    color: #a7a7a7;
+    height: 1.4rem;
+}
+
+#cadastro-administrador .input-block .input-container input {
+    flex: 1;
+    padding: 0 1rem;
+    background: none;
+    color: var(--color-dark);
+}
+
+#cadastro-administrador #button-ver-senha {
+    margin-right: 1rem;
+    cursor: pointer;
+    color: #a7a7a7;
+}
+
+#cadastro-administrador .possui-cadastro {
+    color: var(--color-dark);
+    font-size: .8rem;
+    color: #a7a7a7;
+}
+
+#cadastro-administrador .possui-cadastro a {
+    font-size: .8rem;
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+#cadastro-administrador .button-submit-cadastro {
+    width: 100%;
+    padding: .7rem 1rem;
+    border-radius: .3rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    transition: .4s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: var(--f-600);
+}
+
+#cadastro-administrador .button-submit-cadastro:hover {
+    transition: .3s ease-out;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.cadastro-container .right-side-container {
+   display: flex;
+   height: 500px;
+   justify-content: center;
+   align-items: center;
+   background: var(--color-primary);
+   border-radius: .3rem;
+}
+
+.dark-mode .cadastro-container .right-side-container {
+    background: #000000;
+}
+
+.cadastro-container .right-side-container > div {
+    text-align: center;
+    color: #ffffff;
+}
+
+.cadastro-container .right-side-container .title {
+    font-size: var(--f-s-3);
+    text-transform: uppercase;
+}
+
+.cadastro-container .right-side-container .logo-cadastro {
+    height: 14rem;
+    margin: 1rem 0;
+}
+
+.cadastro-container .right-side-container .text-info {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.cadastro-container .right-side-container .text-info > span {
+    font-weight: var(--f-800);
+}
+
+.button-dark-mode {
+    height: 3rem;
+    width: 3rem;
+    border-radius: var(--border-r-50);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a7a7a7;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.button-dark-mode:hover {
+    border-color: #707070;
+    color: #707070;
+}
+
+@media screen and (max-width: 990px) {
+    body {
+        align-items: normal;
+        padding-top: 5rem;
+    }
+
+    .cadastro-container {
+        width: max-content;
+        display: block;
+        padding: 3rem;
+        background: none !important;
+        border: 0;
+    }
+
+    .cadastro-container .right-side-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .cadastro-container {
+        width: 98vw;
+    }
+}

@@ -1,0 +1,212 @@
+<section class="form-create-staff-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+
+  <section class="form-create-staff">
+    <div class="input-group">
+      <div class="input-block input-col-2">
+        <label for="input-nome-staff">Nome</label>
+        <input type="text" placeholder="Digite o nome do staff" autocomplete="off" id="input-nome-staff" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-setor-staff">Setor</label>
+        <select name="input-setor-staff" id="input-setor-staff" class="input-setor-staff">
+          <option disabled selected>Selecione</option>
+          <!-- INSERIDO DINAMICAMENTE COM JS -->
+        </select>
+      </div>
+
+      <div class="input-block">
+        <label for="input-funcao-staff">Função</label>
+        <select name="input-funcao-staff" id="input-funcao-staff" class="input-funcao-staff" disabled>
+          <option disabled selected>Selecione</option>
+          <!-- INSERIDO DINAMICAMENTE COM JS -->
+        </select>
+      </div>
+    </div>
+
+    <div class="galeria-wrapper">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button type="reset" class="button-cancelar">Cancelar</button>
+    <button type="submit" class="button-salvar">Salvar</button>
+  </div>
+</section>
+
+<section class="list-staff-container">
+  <div class="header-list">
+    <h2 class="title">Lista de staff's</h2>
+    <div class="assets-list">
+      <div class="setor-container">
+        <select id="setor">
+          <!-- DINAMICAMENTE -->
+        </select>
+        <button id="filtrar">Filtrar</button>
+      </div>
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque pelo nome do staff" autocomplete="off" id="input-search-staff" />
+        <button id="button-submit-search-staff">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-staff" title="Adicionar novo staff">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-staff" cellspacing="0">
+    <thead class="table-header-list-staff">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Nome</th>
+      <th>Setor</th>
+      <th>Função</th>
+    </thead>
+    <tbody class="table-body-list-staff" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-staff">
+    <div class="container-view-staff-details">
+      <div class="details">
+        <h1 class="title">Detalhes do staff</h1>
+
+        <div class="id-staff-container">
+          <h3>ID</h3>
+          <span id="id-staff">00001</span>
+        </div>
+
+        <div class="nome-staff-container">
+          <h3>Nome</h3>
+          <p id="nome-staff">Nome do staff</p>
+        </div>
+
+        <div class="setor-staff-container">
+          <h3>Setor</h3>
+          <p id="setor-staff">Setor do staff</p>
+        </div>
+
+        <div class="funcao-staff-container">
+          <h3>Função</h3>
+          <p id="funcao-staff">Função do staff</p>
+        </div>
+      </div>
+      <div class="staff-view">
+        <img src="http://localhost/WEBSITELINENSE/assets/images/default-avatar.png" id="staff-view-img" />
+        <div class="id-image-container">
+          <p id="id-imagem-staff">0000</p>
+        </div>
+      </div>
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</section>
+
+<section class="form-edit-staff-container">
+  <button class="button-voltar-icon" id="button-voltar-icon-edit-staff">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section class="form-create-staff">
+    <div class="input-group">
+      <div class="input-block input-col-2">
+        <label for="input-nome-staff">Nome</label>
+        <input type="text" placeholder="Digite o nome do staff" autocomplete="off" id="input-nome-staff" />
+      </div>
+
+      <div class="input-block">
+        <label for="input-setor-staff">Setor</label>
+        <select name="input-setor-staff" id="input-setor-staff" class="input-setor-staff-edit">
+          <option disabled selected>Selecione</option>
+          <!-- INSERIDO DINAMICAMENTE COM JS -->
+        </select>
+      </div>
+
+      <div class="input-block">
+        <label for="input-funcao-staff">Função</label>
+        <select name="input-funcao-staff" id="input-funcao-staff" class="input-funcao-staff-edit">
+          <option disabled selected>Selecione</option>
+          <!-- INSERIDO DINAMICAMENTE COM JS -->
+        </select>
+      </div>
+    </div>
+
+    <div class="galeria-wrapper-edit">
+      <h3 class="subtitle"><span>Selecione</span> uma imagem</h3>
+      <div class="galeria-content-edit">
+        <!-- AQUI SERÁ INSERIDO O CONTEÚDO DINAMICAMENTE -->
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="reset" class="button-cancelar" id="button-cancel-upload-staff">
+        Cancelar
+      </button>
+      <button type="submit" class="button-salvar" id="button-upload-staff">
+        Salvar
+      </button>
+    </div>
+  </section>
+</section>
+
+<script src="assets/cms/controller/staff.js"></script>

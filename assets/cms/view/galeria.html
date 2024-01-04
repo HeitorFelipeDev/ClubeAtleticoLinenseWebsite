@@ -1,0 +1,252 @@
+<section class="form-create-image-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section id="form-create-image">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="titulo_imagem">Título da Imagem</label>
+        <input type="text" placeholder="Digite o título da imagem" autocomplete="off" id="input-titulo-imagem" />
+      </div>
+      <div class="input-block">
+        <label for="titulo_imagem">Selecione a Categoria</label>
+        <select name="categoria" id="categoria-imagem">
+          <option disabled selected>Selecione</option>
+          <option value="elenco">Elenco</option>
+          <option value="staff">Staff</option>
+          <option value="noticias">Notícias</option>
+          <option value="patrocinador">Patrocinador</option>
+          <option value="parceiro">Parceiro</option>
+        </select>
+      </div>
+      <div class="input-block">
+        <label for="descricao_imagem">Descrição da Imagem</label>
+        <textarea name="descricao_imagem" id="descricao_imagem" cols="30" rows="7"
+          placeholder="Adicione uma descrição para essa imagem"></textarea>
+      </div>
+    </div>
+    <div class="input_group i-2">
+      <div id="drop-area">
+        <h3>Upload de Imagem</h3>
+        <input type="file" id="file-input" accept="image/*" style="display: none" />
+
+        <div>
+          <img src="../../../../WEBSITELINENSE/assets/images/nuvem.png" class="img-upload" alt="" />
+          <span id="arquiveNome">nomeDoArquivo.jpeg</span>
+        </div>
+
+        <p>Selecionar do meu computador</p>
+        <small>Apenas arquivos: JPG, JPEG e PNG</small>
+        <p id="file-name"></p>
+        <a id="view-image-link" href="#" target="_blank">Ver Imagem</a>
+      </div>
+      <label for="file-input" class="button-upload-file">Upload</label>
+      <img id="image-preview" src="#" alt="Imagem Carregada" />
+
+      <div class="buttons">
+        <button type="reset" class="button-cancelar">Cancelar</button>
+        <button type="submit" class="button-salvar">Salvar</button>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="list-images-container">
+  <div class="header-list">
+    <h2 class="title">Lista de imagens</h2>
+    <div class="assets-list">
+      <div class="categoria-container">
+        <select id="categoria">
+          <option value="">Todas</option>
+          <option value="noticias">Notícias</option>
+          <option value="staff">Staff</option>
+          <option value="elenco">Elenco</option>
+          <option value="patrocinador">Patrocinador</option>
+          <option value="parceiro">Parceiro</option>
+        </select>
+        <button id="filtrar">Filtrar</button>
+      </div>
+      <div class="input-search-container">
+        <input type="text" placeholder="Busque por título de imagens" autocomplete="off" id="input-search-images" />
+        <button id="button-submit-search-images">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+      <button id="button-create-new-image" title="Adicionar nova imagem">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-plus">
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <table class="table-list-images" cellspacing="0">
+    <thead class="table-header-list-images">
+      <th class="flex-th">
+        <button class="button-order" style="background: none" id="sortByCreationDate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-down">
+            <path d="m21 16-4 4-4-4" />
+            <path d="M17 20V4" />
+            <path d="m3 8 4-4 4 4" />
+            <path d="M7 4v16" />
+          </svg>
+          ID
+        </button>
+      </th>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Categoria</th>
+      <th>Caminho</th>
+      <th class="flex-th">
+        Data
+      </th>
+    </thead>
+    <tbody class="table-body-list-images" id="table-body"></tbody>
+  </table>
+
+  <div class="pagination" title="Anterior">
+    <button id="prevPage">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+    <button id="nextPage" title="Próximo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="container-view-image">
+    <div class="container-view-image-details">
+      <div class="details">
+        <h1 class="title">Detalhes da Imagem</h1>
+        <div class="image-title-container">
+          <h3>Título da Imagem</h3>
+          <p id="image-title">Nome da imagem aqui</p>
+        </div>
+        <div class="id-image-container">
+          <h3>ID</h3>
+          <span id="image-id">00001</span>
+        </div>
+        <div class="image-description-container">
+          <h3>Descrição da Imagem</h3>
+          <p id="image-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem esse libero aperiam laborum dolore at
+            exercitationem eveniet earum quis aspernatur qui, dignissimos excepturi blanditiis. Corrupti tempore ad odio
+            hic obcaecati.
+          </p>
+        </div>
+        <div class="categoria-image-container">
+          <h3>Categoria</h3>
+          <div class="categorias">
+            <div class="categoria noticias-categoria">Notícias</div>
+            <div class="categoria elenco-categoria">Elenco</div>
+            <div class="categoria patrocinador-categoria">Patrocinador</div>
+            <div class="categoria parceiro-categoria">Parceiro</div>
+            <div class="categoria staff-categoria">Staff</div>
+          </div>
+        </div>
+        <div class="image-path-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-folder-open">
+            <path
+              d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2" />
+            </svg>
+          <p id="image-path">imagens/elenco/imagem01.png</p>
+        </div>
+        <div class="date-criation-image-container">
+          <h3>Data de criação</h3>
+          <p id="image-data">12/10/2023 16:43:54</p>
+        </div>
+      </div>
+      <div class="image-view">
+        <img src="" id="image-view">
+      </div>
+      <button id="button-back" autofocus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-left">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" /></svg>
+      </button>
+    </div>
+  </dialog>
+
+</section>
+
+<section class="form-edit-image-container">
+  <button class="button-voltar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  </button>
+  <section id="form-create-image">
+    <div class="input-group">
+      <div class="input-block">
+        <label for="titulo_imagem">Título da Imagem</label>
+        <input type="text" placeholder="Digite o título da imagem" autocomplete="off" id="input-titulo-imagem" />
+      </div>
+      <div class="input-block">
+        <label for="titulo_imagem">Selecione a Categoria</label>
+        <select name="categoria" id="categoria-imagem">
+          <option disabled selected>Selecione</option>
+          <option value="elenco">Elenco</option>
+          <option value="staff">Staff</option>
+          <option value="noticias">Notícias</option>
+          <option value="patrocinador">Patrocinador</option>
+          <option value="parceiro">Parceiro</option>
+        </select>
+      </div>
+      <div class="input-block">
+        <label for="descricao_imagem">Descrição da Imagem</label>
+        <textarea name="descricao_imagem" id="descricao_imagem" cols="30" rows="7"
+          placeholder="Adicione uma descrição para essa imagem"></textarea>
+      </div>
+    </div>
+    <div class="input_group i-2">
+      <div id="drop-area">
+        <input type="file" id="file-input-upt" class="input-file-image" accept="image/*" style="display: none" />
+
+        <div>
+          <img src="../../../../WEBSITELINENSE/assets/images/nuvem.png" class="img-upload" alt="" />
+        </div>
+        <small>Escolher outra imagem</small>
+        <p id="file-name"></p>
+        <a id="view-image-link" href="#" target="_blank">Ver Imagem</a>
+      </div>
+      <label for="file-input-upt" class="button-upload-file">Upload</label>
+      <img id="image-preview" src="#" alt="Imagem Carregada" />
+
+      <div class="buttons">
+        <button type="reset" class="button-cancelar">Cancelar</button>
+        <button type="submit" class="button-salvar">Salvar</button>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+<script src="assets/cms/controller/gallery.js"></script>
